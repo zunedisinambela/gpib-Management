@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<odoo>
+    <data>
+
+        <record id="act_sector" model="ir.actions.act_window">
+            <field name="name">Sector</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">gpib.sector</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create your first sector!
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

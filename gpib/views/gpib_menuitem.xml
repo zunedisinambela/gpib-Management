@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <data>
+
+        <menuitem id="menu_gpib_root" name="GPIB" sequence="1"/>
+
+        <menuitem id="menu_master_configuration_root" name="Configuration" parent="menu_gpib_root" sequence="1"/>
+
+        <menuitem id="menu_sector_root" name="Sector" parent="menu_master_configuration_root" sequence="1" action="act_sector"/>
+
+        <menuitem id="menu_pelkat_root" name="Pelkat" parent="menu_master_configuration_root" sequence="1" action="act_pelkat"/>
+
+    </data>
+</odoo>
