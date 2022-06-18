@@ -4,6 +4,20 @@
 <odoo>
     <data>
 
+        <record id="gpib_pelkat_tree" model="ir.ui.view">
+            <field name="name">gpib.pelkat.tree</field>
+            <field name="model">gpib.pelkat</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name"/>
+                    <field name="group_gender"/>
+                    <field name="is_married"/>
+                    <field name="age_min"/>
+                    <field name="age_max"/>
+                </tree>
+            </field>
+        </record>
+
         <record id="act_pelkat" model="ir.actions.act_window">
             <field name="name">Pelkat</field>
             <field name="type">ir.actions.act_window</field>
