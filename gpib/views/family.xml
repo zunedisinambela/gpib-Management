@@ -49,7 +49,15 @@
                                                 <group>
                                                     <field name="position"/>
                                                     <field name="state_married"/>
+                                                    <field name="wedding_date"
+                                                           attrs="{'invisible': [('state_married', '!=', 'married')],
+                                                           'required': [('state_married', '=', 'married')]}"
+                                                    />
                                                     <field name="status"/>
+                                                    <field name="date_death"
+                                                           attrs="{'invisible': [('status', '!=', 'died')],
+                                                           'required': [('status', '=', 'died')]}"
+                                                    />
                                                 </group>
                                             </group>
                                         </form>
