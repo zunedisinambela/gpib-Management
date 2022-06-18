@@ -13,9 +13,9 @@
 
 
         <!-- Family Master -->
-        <menuitem id="menu_family_master_root" name="Family Master" parent="menu_master_configuration_root" sequence="1" action="act_family_master"/>
+        <menuitem id="menu_family_configuration_root" name="Family" parent="menu_gpib_root" sequence="1"/>
 
-        <menuitem id="menu_family_line_root" name="Family Line" parent="menu_master_configuration_root" sequence="1" action="act_family_line"/>
+        <menuitem id="menu_family_master_root" name="Family" parent="menu_family_configuration_root" sequence="1" action="act_family"/>
 
     </data>
 </odoo>

@@ -1,5 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_gpib_sector_superadmin,gpib.gpib.sector superadmin,gpib.model_gpib_sector,gpib.group_gpib_superadmin,1,1,1,1
 access_gpib_pelkat_superadmin,gpib.gpib.pelkat superadmin,gpib.model_gpib_pelkat,gpib.group_gpib_superadmin,1,1,1,1
-access_gpib_family_master,gpib.gpib.family.master superadmin,gpib.model_gpib_family_master,gpib.group_gpib_superadmin,1,1,1,1
+access_gpib_family_superadmin,gpib.gpib.family superadmin,gpib.model_gpib_family,gpib.group_gpib_superadmin,1,1,1,1
 access_gpib_family_line,gpib.gpib.family.line superadmin,gpib.model_gpib_family_line,gpib.group_gpib_superadmin,1,1,1,1

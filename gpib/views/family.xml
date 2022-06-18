@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<odoo>
+    <data>
+
+        <record id="gpib_family_tree" model="ir.ui.view">
+            <field name="name">gpib.family.tree</field>
+            <field name="model">gpib.family</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="qty"/>
+                    <field name="address"/>
+                    <field name="sector_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="gpib_family_form" model="ir.ui.view">
+            <field name="name">gpib.family.form</field>
+            <field name="model">gpib.family</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="qty"/>
+                            <field name="address"/>
+                            <field name="sector_id"/>
+                        </group>
+                        <notebook>
+                            <page string="Family Detail" name="family">
+                                <group>
+                                    <field name="line_ids" nolabel="1" colspan="4" widget="one2many_list">
+                                        <tree>
+                                            <field name="name"/>
+                                            <field name="date_birthday"/>
+                                            <field name="position"/>
+                                        </tree>
+                                        <form>
+                                            <group>
+                                                <group>
+                                                    <field name="name"/>
+                                                    <field name="date_birthday"/>
+                                                </group>
+                                                <group>
+                                                    <field name="position"/>
+                                                </group>
+                                            </group>
+                                        </form>
+                                    </field>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="act_family" model="ir.actions.act_window">
+            <field name="name">Family Master</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">gpib.family</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create your first family master!
+                </p>
+            </field>
+
+
+        </record>
+
+    </data>
+</odoo>

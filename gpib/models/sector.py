@@ -6,4 +6,4 @@ class GpibSector(models.Model):
     _description = "App Sector"
 
     name = fields.Char(string='Name', required=True)
-    qty = fields.Integer(string='Qty', required=True)
+    qty = fields.Integer(string='Qty')
