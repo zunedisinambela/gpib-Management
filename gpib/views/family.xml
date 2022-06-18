@@ -43,9 +43,13 @@
                                                 <group>
                                                     <field name="name"/>
                                                     <field name="date_birthday"/>
+                                                    <field name="age"/>
+                                                    <field name="gender"/>
                                                 </group>
                                                 <group>
                                                     <field name="position"/>
+                                                    <field name="state_married"/>
+                                                    <field name="status"/>
                                                 </group>
                                             </group>
                                         </form>
