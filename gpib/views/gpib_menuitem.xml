@@ -11,5 +11,11 @@
 
         <menuitem id="menu_pelkat_root" name="Pelkat" parent="menu_master_configuration_root" sequence="1" action="act_pelkat"/>
 
+
+        <!-- Family Master -->
+        <menuitem id="menu_family_master_root" name="Family Master" parent="menu_master_configuration_root" sequence="1" action="act_family_master"/>
+
+        <menuitem id="menu_family_line_root" name="Family Line" parent="menu_master_configuration_root" sequence="1" action="act_family_line"/>
+
     </data>
 </odoo>
