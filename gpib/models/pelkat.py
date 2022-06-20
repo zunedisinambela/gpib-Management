@@ -14,3 +14,4 @@ class Pelkat(models.Model):
     is_married = fields.Boolean(default=False)
     age_min = fields.Integer(default=0)
     age_max = fields.Integer(default=60)
+    pelkat_lines_ids = fields.One2many('gpib.family.line', 'pelkat_id')

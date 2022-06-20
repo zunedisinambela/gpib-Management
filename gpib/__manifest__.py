@@ -9,8 +9,8 @@
     'license': 'LGPL-3',
     'depends': [],
     'data': [
-        'views/family.xml',
-        'views/pelkat.xml',
+        'views/family_view.xml',
+        'views/pelkat_view.xml',
         'views/sector_view.xml',
         'views/gpib_menuitem.xml',
         'security/security.xml',

@@ -10,9 +10,10 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
-                    <field name="qty"/>
+                    <field name="phone"/>
                     <field name="address"/>
                     <field name="sector_id"/>
+                    <field name="qty"/>
                 </tree>
             </field>
         </record>
@@ -25,9 +26,10 @@
                     <sheet>
                         <group>
                             <field name="name"/>
-                            <field name="qty"/>
+                            <field name="phone"/>
                             <field name="address"/>
                             <field name="sector_id"/>
+                            <field name="qty"/>
                         </group>
                         <notebook>
                             <page string="Family Detail" name="family">
@@ -37,6 +39,10 @@
                                             <field name="name"/>
                                             <field name="date_birthday"/>
                                             <field name="position"/>
+                                            <field name="date_baptism"/>
+                                            <field name="date_sidi"/>
+                                            <field name="last_education"/>
+                                            <field name="pelkat_id"/>
                                         </tree>
                                         <form>
                                             <group>
@@ -45,6 +51,7 @@
                                                     <field name="date_birthday"/>
                                                     <field name="age"/>
                                                     <field name="gender"/>
+                                                    <field name="last_education"/>
                                                 </group>
                                                 <group>
                                                     <field name="position"/>
@@ -58,6 +65,9 @@
                                                            attrs="{'invisible': [('status', '!=', 'died')],
                                                            'required': [('status', '=', 'died')]}"
                                                     />
+                                                    <field name="pelkat_id"/>
+                                                    <field name="date_baptism"/>
+                                                    <field name="date_sidi"/>
                                                 </group>
                                             </group>
                                         </form>
@@ -80,8 +90,6 @@
                     Create your first family master!
                 </p>
             </field>
-
-
         </record>
 
     </data>

@@ -10,6 +10,7 @@ class FamilyMaster(models.Model):
     name = fields.Char(string='Name', required=True)
     qty = fields.Integer(string='Qty', compute='_compute_family_line')
     address = fields.Text(string='Address', required=True)
+    phone = fields.Char(string='Phone')
     sector_id = fields.Many2one('gpib.sector', string='Name Sector', required=True)
     line_ids = fields.One2many('gpib.family.line', 'family_id')
 
@@ -22,13 +23,13 @@ class FamilyLine(models.Model):
     _name = "gpib.family.line"
     _description = "Family Line"
 
-    family_id = fields.Many2one(string='Family Name', required=True)
+    family_id = fields.Many2one('gpib.family', string='Family Name', required=True)
     name = fields.Char(string='Name', required=True)
     date_birthday = fields.Date(string='Date of Birth', required=True)
     date_baptism = fields.Date(string='Date of Baptis')
     date_sidi = fields.Date(string='Date of Sidi')
     last_education = fields.Char(string='Last Education')
-    pelkat_id = fields.Many2one(string='Pelkat')
+    pelkat_id = fields.Many2one('gpib.pelkat', string='Pelkat', compute='_compute_pelkat')
     age = fields.Integer(string='Age', compute='_compute_age')
     gender = fields.Selection([
         ('male', 'Male'),
@@ -65,3 +66,19 @@ class FamilyLine(models.Model):
                 d2 = date.today()
                 rd = relativedelta(d2, dt)
                 record.age = rd.years
+
+    def _compute_pelkat(self):
+        for record in self:
+
+            pelkat = False
+
+            if record.state_married == 'married':
+                pelkat = self.env['gpib.pelkat'].search([('is_married', '=', True), '|',
+                                                         ('group_gender', '=', record.gender),
+                                                         ('group_gender', '=', 'all')])
+
+            if not pelkat or record.age > pelkat.age_max:
+                pelkat = self.env['gpib.pelkat'].search([('age_min', '<=', record.age),
+                                                         ('age_max', '>', record.age)])
+
+            record.pelkat_id = pelkat.id if pelkat else False
