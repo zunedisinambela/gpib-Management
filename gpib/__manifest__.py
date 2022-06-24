@@ -9,6 +9,7 @@
     'license': 'LGPL-3',
     'depends': [],
     'data': [
+        'views/gpib_sector_dashboard_assets_backend.xml',
         'views/family_view.xml',
         'views/pelkat_view.xml',
         'views/sector_view.xml',
@@ -16,7 +17,9 @@
         'security/security.xml',
         'security/ir.model.access.csv',
     ],
-    'qweb': [],
+    'qweb': [
+        'static/src/xml/gpib_sector_dashboard_templates.xml',
+    ],
     'installable': True,
     'application': True,
     'auto_install': False,

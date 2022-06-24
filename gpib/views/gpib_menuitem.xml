@@ -3,19 +3,23 @@
 <odoo>
     <data>
 
+        <!--Top Menu-->
         <menuitem id="menu_gpib_root" name="GPIB" sequence="1"/>
 
-        <menuitem id="menu_master_configuration_root" name="Configuration" parent="menu_gpib_root" sequence="1"/>
+        <menuitem id="menu_sector_root" parent="menu_gpib_root" name="Sectors" sequence="2" action="act_sector"/>
+        <menuitem id="menu_pelkat_root" parent="menu_gpib_root" name="Pelkats" sequence="3"/>
+        <menuitem id="menu_family_root" parent="menu_gpib_root" name="Families" sequence="4"/>
 
-        <menuitem id="menu_sector_root" name="Sector" parent="menu_master_configuration_root" sequence="1" action="act_sector"/>
+        <!--Sub Menu Sector-->
+        <menuitem id="menu_sector" name="Sector" parent="menu_sector_root" sequence="1" action="act_sector"/>
 
-        <menuitem id="menu_pelkat_root" name="Pelkat" parent="menu_master_configuration_root" sequence="1" action="act_pelkat"/>
+        <menuitem id="menu_sector_dashboard" name="Sector Dashboard" parent="menu_sector_root" sequence="2" action="act_sector_dashboard"/>
 
+        <!--Sub Menu Pelkat-->
+        <menuitem id="menu_pelkat" name="Pelkat" parent="menu_pelkat_root" sequence="1" action="act_pelkat"/>
 
-        <!-- Family Master -->
-        <menuitem id="menu_family_configuration_root" name="Family" parent="menu_gpib_root" sequence="1"/>
-
-        <menuitem id="menu_family_master_root" name="Family" parent="menu_family_configuration_root" sequence="1" action="act_family"/>
+        <!-- Sub Menu Family -->
+        <menuitem id="menu_family" name="Family" parent="menu_family_root" sequence="1" action="act_family"/>
 
     </data>
 </odoo>

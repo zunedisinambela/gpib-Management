@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<template xml:space="preserve">
+
+    <t t-name="SectorDashboardMain">
+        <div class="o_charts scroll" style="background:#FFFFFF">
+            <div class="container-fluid o_sector_dashboard">
+            </div>
+        </div>
+    </t>
+
+    <t t-name="SectorDashboardContent">
+        <div class="main-section" style="background:#FFFFFF">
+            <div class="o_action o_view_controller">
+                <div class="o_content row">
+                    <t t-foreach="widget.sectors" t-as="sector">
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-6">
+                                <div class="small-box bg-aqua">
+                                    <p>
+                                        <t t-esc="sector.name"/>
+                                    </p>
+                                    <br/>
+                                    <p>
+                                        <t t-esc="sector.qty"/>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="SectorDashboardWarning">
+        <div>
+            <p>Error: Could not find</p>
+        </div>
+    </t>
+</template>

@@ -12,3 +12,18 @@ class GpibSector(models.Model):
     def _compute_family(self):
         for record in self:
             record.qty = len(record.family_ids)
+
+    @api.model
+    def get_data(self):
+
+        sectors = self.env['gpib.sector'].search([])
+
+        data_sectors = []
+        for sector in sectors:
+            data_sector = {
+                'name': sector.name,
+                'qty': sector.qty
+            }
+            data_sectors.append(data_sector)
+
+        return data_sectors
