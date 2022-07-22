@@ -9,6 +9,7 @@
     'license': 'LGPL-3',
     'depends': [],
     'data': [
+        'views/gpib_templates.xml',
         'views/gpib_sector_dashboard_assets_backend.xml',
         'views/family_view.xml',
         'views/pelkat_view.xml',

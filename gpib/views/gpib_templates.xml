@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+
+    <template id="gpib_template" name="My Name">
+        <t t-esc="name"/>
+        <hr/>
+        <t t-esc="ages"/>
+
+        <hr/><hr/>
+        <table border="1">
+            <thead>
+                <tr>
+                    <t t-foreach="sectors" t-as="sector">
+                        <td><t t-esc="sector.name"/></td>
+                    </t>
+                </tr>
+            </thead>
+            <tbody>
+                <t t-foreach="families" t-as="family">
+                    <tr>
+                        <td><t t-esc="family.name"/></td>
+                    </tr>
+                </t>
+            </tbody>
+        </table>
+    </template>
+
+</odoo>
